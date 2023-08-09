@@ -1,0 +1,18 @@
+version: "3"
+services:
+  subscriber:
+    build:
+      context: ./subscriber
+      dockerfile: Dockerfile
+    networks:
+      - devinhouse-network
+
+  publisher:
+    build:
+      context: ./publisher
+      dockerfile: Dockerfile
+    networks:
+      - devinhouse-network
+networks:
+  devinhouse-network:
+    driver: bridge
